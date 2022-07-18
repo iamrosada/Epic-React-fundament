@@ -18,7 +18,7 @@
 <!--   💰 document.getElementById('root') -->
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
 
-<body>
+<!-- <body>
   <div id="root"></div>
   <script type="module">
     const container = document.createElement('div');
@@ -26,5 +26,16 @@
     container.className='container'
     document.getElementById('root').append(container)
   </script>
+</body> -->
+<!-- Extra without the div root tag-->
+<body>
+  <script type="module">
+    const rootElement = document.createElement('div');
+    rootElement.setAttribute('id', 'root');
+    document.body.append(rootElement)
+    const element = document.createElement('div');
+    element.textContent = 'Hello World'
+    element.className='container'
+    rootElement.append(element)
+  </script>
 </body>
-
