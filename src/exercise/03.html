@@ -9,9 +9,10 @@
 
 
   <script type="text/babel">
-    const greeting = 'Hello World'
-    const myClassName = 'container'
-    const element = (<div className={myClassName.toUpperCase()}>{greeting}</div>)
+    const children = 'Hello World'
+    const className = 'container'
+    const props = {children,className}
+    const element = (<div className={props.className}>{props.children}</div>)
     ReactDOM.render(element, document.getElementById('root'))
   </script>
 </body>
