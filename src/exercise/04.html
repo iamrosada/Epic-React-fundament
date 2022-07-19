@@ -10,10 +10,13 @@
 
     function Message({children}){
       return <div className="message">{children}</div>
-
+    }
+    function message({children}){
+      return <div className="message">{children}</div>
     }
     const element = (
       <div className="container">
+        <div>{message({children:'New Hello World'})}</div>
         <Message>Hello World</Message>
         <Message className="message">Goodbye World</Message>
       </div>
