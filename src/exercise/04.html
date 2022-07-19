@@ -35,13 +35,18 @@
     //props- the object inside of props
     Message.propTypes ={
       subject(props, propName, componentName){
-        console.log({props, propName,componentName})
+        const type = typeof props[propName]
+        if(type !== 'string'){
+          return new Error(
+            `Hey, the component ${componentName} needs the prop ${propName} to be a type of "string"  but was passed a ${type}`
+          )
+        }
       }
     }
     const element = (
       <div className="container">
         <Message greetings="Hello" subject="World"/>
-        <Message greetings="Goodbye" subject="World"/>
+        <Message greetings="Goodbye" subject={6}/>
       </div>
     )
 
