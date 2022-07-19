@@ -23,17 +23,10 @@
     // )
 
     //Validation with PropType
-
-    function Message({subject,greetings}){
-      return(
-        <div className="message">
-          {greetings},{subject}
-        </div>
-      )
-    }
+    
     //propName- name of props
     //props- the object inside of props
-    Message.propTypes ={
+    const propTypes ={
       subject(props, propName, componentName){
         const type = typeof props[propName]
         if(type !== 'string'){
@@ -43,12 +36,26 @@
         }
       }
     }
+    function Message({subject,greetings}){
+      return(
+        <div className="message">
+          {greetings},{subject}
+        </div>
+      )
+    }
+
+    Message.propTypes ={
+      subject: propTypes.string,
+      greetings: propTypes.string,
+    }
+
     const element = (
       <div className="container">
         <Message greetings="Hello" subject="World"/>
         <Message greetings="Goodbye" subject={6}/>
       </div>
     )
+
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     ReactDOM.render(element, document.getElementById('root'))
