@@ -8,17 +8,33 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
 
-    function Message({children}){
-      return <div className="message">{children}</div>
-    }
-    function message({children}){
-      return <div className="message">{children}</div>
+    // function Message({children}){
+    //   return <div className="message">{children}</div>
+    // }
+    // function message({children}){
+    //   return <div className="message">{children}</div>
+    // }
+  // <div>{message({children:'New Hello World'})}</div>
+   // const element = (
+    //   <div className="container">
+    //     <Message>Hello World</Message>
+    //     <Message className="message">Goodbye World</Message>
+    //   </div>
+    // )
+
+    //Validation with PropType
+
+    function Message({subject,greetings}){
+      return(
+        <div className="message">
+          {greetings},{subject}
+        </div>
+      )
     }
     const element = (
       <div className="container">
-        <div>{message({children:'New Hello World'})}</div>
-        <Message>Hello World</Message>
-        <Message className="message">Goodbye World</Message>
+        <Message greetings="Hello" subject="World"/>
+        <Message greetings="Goodbye" subject="World"/>
       </div>
     )
 
