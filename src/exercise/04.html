@@ -14,8 +14,8 @@
     // function message({children}){
     //   return <div className="message">{children}</div>
     // }
-  // <div>{message({children:'New Hello World'})}</div>
-   // const element = (
+    // <div>{message({children:'New Hello World'})}</div>
+    // const element = (
     //   <div className="container">
     //     <Message>Hello World</Message>
     //     <Message className="message">Goodbye World</Message>
@@ -30,6 +30,13 @@
           {greetings},{subject}
         </div>
       )
+    }
+    //propName- name of props
+    //props- the object inside of props
+    Message.propTypes ={
+      subject(props, propName, componentName){
+        console.log({props, propName,componentName})
+      }
     }
     const element = (
       <div className="container">
